@@ -1,6 +1,10 @@
 import Foundation
 import Logging
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
+@MainActor
 public enum WebhookSender {
     private static let urlSession: URLSession = {
         let config = URLSessionConfiguration.default
